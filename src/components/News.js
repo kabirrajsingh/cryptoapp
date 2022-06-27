@@ -19,7 +19,7 @@ function News() {
                 'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
             }
         };
-        fetch('https://bing-news-search1.p.rapidapi.com/news/search?q=cryptocurrency&count=9&freshness=Day&textFormat=Raw&safeSearch=Off', options)
+        fetch('https://bing-news-search1.p.rapidapi.com/news/search?q=cryptocurrency&count=12&freshness=Day&textFormat=Raw&safeSearch=Off', options)
             .then(response => response.json())
             .then(response => {
                 setStats(response.value);
@@ -32,15 +32,16 @@ function News() {
     return (
         <div className="container">
             <h2>CURRENT NEWS</h2>
-            <div className="row mt-4 justify-content-between">
+            
                 <div className="card-group">
+                <div className="row mt-4 justify-content-between">
                     {stats.map((element) => (
-                        <div className="col-sm-4" key={element.name}>
-                            <div className="card mb-4" style={{ "width": "18rem" }} >
+                        <div className="col-5 col-md-2" key={element.name}>
+                            <div className="card mb-4 mx-2" >
                                 <img src={element.image ? element.image.thumbnail.contentUrl : "https://www.bing.com/th?id=OVFT.G4NA00-VlBBKXTDsC3gecS&pid=News"} className="card-img-top" alt="..." />
                                 <div className="card-body">
-                                    <a href={element.url} className="list-group-item list-group-item-action" target="_blank"><h6 className="card-subtitle mb-2 text-muted">{element.name}</h6></a>
-                                    <p className="card-text">{element.description.slice(0, 80)}...</p>
+                                    <a href={element.url} className="list-group-item list-group-item-action" target="_blank"><h6 className="card-subtitle mb-2 text-muted">{element.name.slice(0,40)}...</h6></a>
+                                    <p className="card-text">{element.description.slice(0, 40)}...</p>
                                 </div>
                                 <div className="card-footer text-muted">
                                     Published on {new Date(element.datePublished).toGMTString()}

@@ -29,7 +29,7 @@ const Coins = (props) => {
             <h2>TOP COINS</h2>
             <div className="row mt-3">
                 {stats.map((element) => (
-                    <div className="col-sm-4 mb-3" id="#market">
+                    <div className="col-sm-4 mb-3" id="#market" key={element.uuid}>
                         <div className="card" style={{ "maxWidth": "18rem" }}>
                             <div className="card-body">
                                 <h5 className="card-title d-flex justify-content-between align-items-center"><div>{element.rank}. 

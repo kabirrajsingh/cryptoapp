@@ -9,7 +9,7 @@ function Header() {
                     
                     {/* <img src="/logo.png" alt="" width="30" height="24" className="d-inline-block align-text-top" /> */}
                     
-                    <Link to="" className='text-decoration-none '> <a className="navbar-brand" href="#" >Cryptoverse</a></Link>
+                     <a className="navbar-brand" href="/" >Cryptoverse</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
